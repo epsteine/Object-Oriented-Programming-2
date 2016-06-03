@@ -22,6 +22,8 @@ class Instructor < Person
   end
 end
 
+chris = Instructor.new("Chris")
+p chris.greeting 
 ellie = Student.new("Ellie")
 p ellie.learn
 p ellie.greeting
