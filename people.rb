@@ -23,7 +23,15 @@ class Instructor < Person
 end
 
 chris = Instructor.new("Chris")
-p chris.greeting 
+p chris.greeting
+p chris.teach
 ellie = Student.new("Ellie")
 p ellie.learn
 p ellie.greeting
+
+#The following commands don't work.  This is because while both the student and
+#instructor inherit from the People class, the student doesn't inherit anything
+#from the instructor class, and the instructor doesn't inherit anything from
+#the student class.
+p chris.learn
+p ellie.teach
