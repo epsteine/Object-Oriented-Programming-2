@@ -8,7 +8,7 @@ class Item #Cart
     @import_tax = import_tax
   end
 
-  def taxes #accounts for all tax scenarios
+  def total  #accounts for final price in all tax scenarios
 
     if (@sales_tax == true) && (@import_tax == true)
       @price * 1.15
@@ -21,19 +21,6 @@ class Item #Cart
     end
   end
 end
-#@sales_tax = (0.10 * @price)
-#   end
-#
-#   def import_tax
-#     @import_tax = (0.05 * @price)
-#   end
-#
-#   def total_sales_tax
-#     @import_tax + @sales_tax
-#   end
-#
-# end
-
 
 # class Receipt < Item
 #
@@ -42,5 +29,12 @@ end
 #   end
 # end
 
-chocolate = Item.new("chocolate", 2, true, false)
-p chocolate.taxes
+chocolate = Item.new("chocolate", 2, true, true)
+catheter = Item.new("catheter", 10.5, false, false)
+anna_karenina = Item.new('anna_karenina', 9.25, true, false)
+dress = Item.new('dress', 35.95, false, true)
+
+p chocolate.total
+p catheter.total
+p anna_karenina.total
+p dress.total
