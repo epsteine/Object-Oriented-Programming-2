@@ -11,13 +11,13 @@ class Item #Cart
   def total  #accounts for final price in all tax scenarios
 
     if (@sales_tax == true) && (@import_tax == true)
-      @price * 1.15
+      (@price * 1.15).round(2)
     elsif (@sales_tax == true) && (@import_tax == false)
-      @price * 1.1
+      (@price * 1.10).round(2)
     elsif (@sales_tax == false) && (@import_tax == true)
-      @price * 1.05
+      (@price * 1.05).round(2)
     elsif (@sales_tax == false) && (@import_tax == false)
-      @price
+      (@price).round(2)
     end
   end
 end
@@ -29,8 +29,8 @@ end
 #   end
 # end
 
-chocolate = Item.new("chocolate", 2, true, true)
-catheter = Item.new("catheter", 10.5, false, false)
+chocolate = Item.new("chocolate", 2.00, true, true)
+catheter = Item.new("catheter", 10.50, false, false)
 anna_karenina = Item.new('anna_karenina', 9.25, true, false)
 dress = Item.new('dress', 35.95, false, true)
 
